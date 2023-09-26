@@ -60,7 +60,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@96383f45573cb7f253c731d3b3ab81c87ef81934 # v5.0.0
         with:
-          images: ${{ env.REGISTRY }}/${{ github.actor }}
+          images: ${{ env.REGISTRY }}/${{ github.actor }}:${{ org.opencontainers.image.title }}
 #          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           
       # Build and push Docker image with Buildx (don't push on PR)
@@ -72,6 +72,6 @@ jobs:
           context: .
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
+#          labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
