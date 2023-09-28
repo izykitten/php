@@ -80,7 +80,7 @@ jobs:
         with:
           dockerfile: ./Dockerfile
           format: sarif
-          output: hadolint-results.sarif
+          output-file: hadolint-results.sarif
           no-fail: true
 
       - name: Upload analysis results to GitHub
