@@ -1,3 +1,2 @@
-FROM php:8.2-fpm-alpine
-
+FROM nginx:alpine
 #RUN apk add --no-cache
