@@ -1,13 +1,13 @@
-name: Docker CLI
+name: Github CLI
 
 on:
   schedule:
     - cron: '00 04 * * *'
   push:
-    #branches: [ "master" ]
+    branches-ignore: [ "master" ]
     #tags: [ "latest" ]
   pull_request:
-    #branches: [ "master" ]
+    branches-ignore: [ "master" ]
 
 env:
   # Use docker.io for Docker Hub if empty
