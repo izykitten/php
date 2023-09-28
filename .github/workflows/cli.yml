@@ -104,7 +104,7 @@ jobs:
         with:
         #  image-ref: 'docker.io/my-organization/my-app:${{ github.sha }}'
         #  image-ref: '${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}@sha256:${{ github.sha }}'
-          image-ref: ${{ steps.meta.outputs.tags }}${{ steps.meta.outputs.labels }}
+          image-ref: '${{ steps.meta.outputs.tags }}${{ steps.meta.outputs.labels }}'
           format: 'template'
           template: '@/contrib/sarif.tpl'
           output: 'trivy-results.sarif'
