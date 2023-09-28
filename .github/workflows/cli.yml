@@ -4,11 +4,10 @@ on:
   schedule:
     - cron: '00 04 * * *'
   push:
-    branches: [ "master" ]
-    # Publish semver tags as releases.
-    tags: [ "latest" ]
+    #branches: [ "master" ]
+    #tags: [ "latest" ]
   pull_request:
-    branches: [ "master" ]
+    #branches: [ "master" ]
 
 env:
   # Use docker.io for Docker Hub if empty
@@ -81,7 +80,7 @@ jobs:
         with:
           dockerfile: ./Dockerfile
           format: sarif
-          output-file: hadolint-results.sarif
+          output: hadolint-results.sarif
           no-fail: true
 
       - name: Upload analysis results to GitHub
