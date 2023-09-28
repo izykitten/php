@@ -5,7 +5,7 @@ on:
     - cron: '00 04 * * *'
   push:
     branches-ignore: [ "master" ]
-    tags: [ "testing" ]
+ #   tags: [ "testing" ]
   pull_request:
     branches-ignore: [ "master" ]
 
