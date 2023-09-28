@@ -113,8 +113,7 @@ jobs:
         #  image-ref: 'docker.io/my-organization/my-app:${{ github.sha }}'
           image-ref: '${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.DOCKER_METADATA_OUTPUT_VERSION }}'
          # image-ref: '${{ steps.meta.outputs.tags }}${{ steps.meta.outputs.labels }}'
-          format: 'template'
-          template: '@/contrib/sarif.tpl'
+          format: 'sarif'
           output: 'trivy-results.sarif'
           severity: 'CRITICAL,HIGH'
 
