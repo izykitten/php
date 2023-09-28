@@ -17,7 +17,7 @@ env:
 
 jobs:
   build:
-    name: Run docker build
+    name: Run Docker build
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -119,4 +119,3 @@ jobs:
         uses: github/codeql-action/upload-sarif@v2
         with:
           sarif_file: 'trivy-results.sarif'
-
