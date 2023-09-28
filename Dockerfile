@@ -1,3 +1,3 @@
 FROM nginx:mainline
-FROM slim
+FROM scratch
 #RUN apk add --no-cache
