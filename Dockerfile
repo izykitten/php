@@ -11,4 +11,4 @@ RUN curl -sSL https://github.com/mlocati/docker-php-extension-installer/releases
       XMLReader XMLWriter zip zlib pdo_pgsql \
       bz2 intl sodium ftp gmp exif apcu imagick sysvsem phpredis
 
-RUN docker-php-ext-enable opcache gmp bcmath
+RUN docker-php-ext-enable opcache
