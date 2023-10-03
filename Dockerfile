@@ -1,8 +1,8 @@
 FROM php:8.2-fpm
 
 RUN apt-get update && apt-get install -y \
-		ffmpeg libreoffice \
-                php8.2-redis \
+		ffmpeg \
+                libreoffice \
         && rm -rf /var/lib/apt/lists/*
   
 RUN curl -sSL https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions -o - | sh -s \
@@ -11,4 +11,5 @@ RUN curl -sSL https://github.com/mlocati/docker-php-extension-installer/releases
       XMLReader XMLWriter zip zlib pdo_pgsql \
       bz2 intl sodium ftp gmp exif apcu imagick sysvsem gmp bcmath
 
-RUN docker-php-ext-enable opcache
+RUN pecl install redis \
+	&& docker-php-ext-enable redis opcache
