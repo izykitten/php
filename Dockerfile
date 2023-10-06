@@ -10,7 +10,7 @@ RUN curl -sSL https://github.com/mlocati/docker-php-extension-installer/releases
       ctype curl dom GD libxml \
       mbstring posix session SimpleXML \
       XMLReader XMLWriter zip zlib pdo_pgsql \
-      bz2 intl sodium ftp gmp exif apcu imagick sysvsem gmp bcmath
+      bz2 intl sodium ftp gmp exif apcu imagick sysvsem gmp bcmath pcntl
 
 RUN pecl install redis \
-	&& docker-php-ext-enable redis opcache pcntl
+	&& docker-php-ext-enable redis opcache
