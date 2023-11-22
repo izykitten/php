@@ -2,7 +2,7 @@ name: Github CLI
 
 on:
   schedule:
-    - cron: '0 04 * * 0'
+    - cron: '00 04 * * *'
   push:
     branches-ignore: [ "master" ]
  #   tags: [ "testing" ]
